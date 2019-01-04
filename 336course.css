@@ -1,0 +1,199 @@
+/********************************************************
+    The purpose of course.css is to house only the css
+    specific to an individual course. The online.css
+    houses all the default template formatting.
+********************************************************/
+
+
+/* DO NOT DELETE OR MODIFY THIS IMPORT */
+
+@import url("//content.byui.edu/integ/gen/599082e0-3e89-4fd9-ac69-2615865d63c7/0/online.css");
+
+/* Add Course Specific css Below */
+
+html {
+  background: -webkit-radial-gradient(ellipse, #4b93af 0%, #0b384a 100%) fixed;
+  background: radial-gradient(ellipse, #4b93af 0%, #0b384a 100%) fixed;
+}
+
+h1 {
+  color: #333333;
+}
+
+h2 {
+  color: #346679;
+}
+
+h3 {
+  color: #5f6060;
+}
+
+h4 {
+  color: #346679;
+}
+
+h5 {
+  color: #5f6060;
+}
+
+a {
+  color: #2d5d94;
+  border-bottom: 2px solid #2d5d94;
+}
+
+a:hover {
+  color: #279f61;
+  border-bottom: 2px solid #279f61;
+}
+
+a:visited {
+  color: #279f61;
+  border-bottom: 2px solid #279f61;
+}
+
+#footer {
+  color: #e2e2e2;
+  background-color: #0b384a;
+}
+
+
+/********************************************
+    SPLASH PAGE STYLING
+*********************************************/
+
+.splash #article {
+  color: #eaeaea;
+  background-color: #0b384a;
+}
+
+.splash h1 {
+  color: #fafafa;
+}
+
+.splash h2 {
+  color: #46e19c;
+}
+
+.splash h3 {
+  color: #c3c3c3;
+}
+
+.splash h4 {
+  color: #46e19c;
+}
+
+.splash h5 {
+  color: #c3c3c3;
+}
+
+.splash a {
+  color: #a1d7ff;
+  border-bottom: 2px solid #a1d7ff;
+}
+
+.splash a:hover {
+  color: #46e19c;
+  border-bottom: 2px solid #46e19c;
+}
+
+.splash a:visited {
+  color: #46e19c;
+  border-bottom: 2px solid #46e19c;
+}
+
+.splash #footer {
+  color: #e2e2e2;
+  background-color: #4b93af;
+}
+
+
+/********************************************
+    FEATURES STYLING
+*********************************************/
+
+
+/* Callout box */
+
+.callout {
+  color: #2d5d94;
+  background: #e3ded1;
+}
+
+.no-left{
+  margin-left: 0;
+}
+
+
+/* Drop downs */
+
+.drop-down {
+  background: #225c72;
+}
+
+.drop-down:hover {
+  background: #1f4a5a;
+}
+
+
+/* Rubric table */
+
+
+/* Column headings */
+
+.rubric tr:first-child th {
+  background-color: #225c72;
+}
+
+
+/* Row headings */
+
+.rubric th {
+  background-color: #16985e;
+}
+
+
+/* Mouseover popups */
+
+#main .popup {
+  border-bottom: dotted 2px #225c72;
+}
+
+#main .popup span {
+  background: #225c72;
+  box-shadow: 5px 5px 5px #0F0F0F;
+}
+
+#main .popup:after {
+  border-color: #225c72 transparent transparent transparent;
+}
+
+
+/*Specific Styles to CIT 336*/
+
+#gradetable {
+  width: 50%;
+  min-width: 320px;
+}
+
+#gradetable th {
+  font-weight: bold;
+  text-align: center;
+}
+
+article dl dd {
+  padding-left: 1em;
+}
+
+footer {
+  background-color: #f0f0f0;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+mark{
+ background-color: yellow;
+}
