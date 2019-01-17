@@ -32,32 +32,34 @@
                     So, Git provides:
                 </p>
                 
-                <ul>
+                <ol>
                     <li>multiple individuals with the ability to work on the same code</li>
                     <li>a timeline of saves called commits, where each has a description and date</li>
-                </ul>
+                </ol>
                 
                 <h2>Branching</h2>
                 <p>
-                    The way Git implements both functionalities is through the use of
+                    The way Git implements the first functionality is through the use of
                     branches. When a repository is created, a branch called "master" is
                     also created. From "master", individuals create new branches.
-                    Sometimes branches are discarded, but usually, the branch changes get
-                    merged into the master branch. Merge conflicts do arise, but that is a
-                    topic for another day.
+                    Sometimes branches are discarded, but usually, the branch gets
+                    merged into "master" once the 
+                    <a href="#merge" title="Jump to merge requests">merge request</a> is approved. 
+                    Merge conflicts do arise, but that is a topic for another day.
                 </p>
                 <p>
-                    You will create a branch for every assignment. Instead of having you
-                    merge into and branch from "master," you will branch from the previous assignment's branch. 
-                    That is not typically the procedure developers follow. 
-                    With 25 <a href="#merge" title="Jump to merge requests">merge requests</a> to review, I can't review them fast enough for you start 
-                    the next assignment from "master". If you want to learn more about branching and merging, you can
-                    read this
-                    <a
-            href="https://thenewstack.io/dont-mess-with-the-master-working-with-branches-in-git-and-github/"
-            target="_blank"
-            title="Open article for reading"
-            >article</a>.
+                    Before you start an enhancement, you must create a branch as outlined in the video and steps below. As you work, you
+                    will commit your changes to that branch. You will not be merging your branch into "master" as described above. Instead,
+                    you will just repeat the branch creation steps. That is not typically the procedure developers follow. 
+                    With 25 merge requests to review, I can't finish them fast enough.
+                </p>
+                <p>
+                    If you want to learn more about branching and merging, you can
+                    read this <a
+                        href="https://thenewstack.io/dont-mess-with-the-master-working-with-branches-in-git-and-github/"
+                        target="_blank"
+                        title="Open article for reading"
+                        >article</a>.
                 </p>
                 <h3>Create a Branch in VS Code</h3>
                 <h4>Video Demonstration</h4>
@@ -99,10 +101,10 @@
                     concerned about the ability to review and discuss the proposed
                     changes. You will have your code changes reviewed by me, and then I will close
                     the merge request. Usually, I'd merge your changes into "master" before closing it
-                    but since we are branching from the previous assignment there is no need.
+                    but we are following a different procedure due to limited time.
                 </p>
                 <p>
-                    Note: You do not have to wait for your merge request to be reviewed
+                    Note: You do not have to wait for your merge request to be closed
                     for you to start the next assignment. Just create a new branch after
                     you create the merge request, and you are ready to go. At the end of
                     the semester, you are welcome to merge your final project's branch
@@ -127,6 +129,11 @@
                     <li>Click on my name in the search results.</li>
                     <li>Click on the "Submit merge request" button.</li>
                 </ol>
+
+                <p><strong>For every enhancement, you will follow the branch and merge request steps. 
+                    You will create a branch that you will commit to as you work. 
+                    When you've finished then create a merge request to submit it.
+                </strong></p>
             </div>
         </div>
 </body>
