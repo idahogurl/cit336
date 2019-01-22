@@ -14,9 +14,11 @@
     <div id="header"><img src="largeBanner.jpg" alt="Course Banner" /></div>
     <div id="article">
       <h1>Web Hosting</h1>
-      To allow your instructor to grade your assignments you will a web host (remote server). 
-      What is a web host you may ask. The video below will give a quick
-      overview to answer this question.
+      <p>
+        To allow your instructor to easily grade your assignments you will a web host (remote server). 
+        What is a web host you may ask. The video below will give a quick
+        overview to answer this question.
+      </p>
 
       <iframe width="560" height="315" src="https://www.youtube.com/embed/0hGK7qiQ6WA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen></iframe>
@@ -28,24 +30,43 @@
           title="SiteGround Setup">
           https://www.siteground.com/studentsprogram/</a>
         
+        <h1>Creating a Remote DB</h1>
+        <h2>Shared Hosting</h2>
+        <p>Typically when a hosting account is purchased from a hosting company, that account is in a shared environment. This
+          means that the account resides on a server with other accounts - this the server is "shared". While this is cost
+          effective, it also poses a few challenges. One of those challenges is creating and using databases that belong to
+          your account and not to someone else.</p>
         
-        <h2>Setup Remote Database</h2>
+        <h2>Databases in the Control Interface</h2>
+        <p>In a shared hosting environment, it is important to realize that you are restricted from running SQL scripts to
+          create a database and provide rights for users to the database. Instead, you must use the hosting company's database
+          creation tool, which usually includes a means of creating proxy users and granting rights or privileges to those
+          users for a particular database. </p>
+        <p>
+          The video below shows the process of creating a database, users and assigning the
+          users to the database -- all in a shared hosting environment.
+          Though the screens will be different than siteground.com, the steps are very similar. 
+          Come ask the instructor for help if you get stuck.
+        </p>
+        <iframe src="https://www.youtube.com/embed/wG2Dc0aqZ-Q" width="560" height="315" allowfullscreen></iframe>
+        <h2>Steps</h2>
         <h3>Open cPanel</h3>
         <ul>
-          <li>Log into siteground.com</li>
-          <li>Select "Don’t need help now"</li>
-          <li>Click "My Accounts tab"</li>
-          <li>Click <strong>Go to cPanel</strong></li>
-          <li>When dialog opens, check both options and if it fails to work read the instruction above to fix</li>
-          <li>Click "Proceed"</li>
+          <li>Log into siteground.com.</li>
+          <li>Select "Don’t need help now".</li>
+          <li>Click "My Accounts tab".</li>
+          <li>Click on the red "Go to cPanel" button.</li>
+            and if it fails to work read the instruction above to fix.</li>
+          <li>Click "Proceed".</li>
         </ul>
         <h3>Create Database</h3>
         <ul>
-          <li>Scroll down a long way down</li>
-          <li>Under "Databases" click "MySQL Databases"</li>
-          <li>Enter <strong>acme</strong> in the first textbox</li>
-          <li>The text before, in my case <strong>rebecca1_</strong>, is the part of my database name.</li>
-          <li>Record your database name for later use</li>
+          <li>Scroll a long way down.</li>
+          <li>Under "Databases" click "MySQL Databases".</li>
+          <li>Enter <strong>acme</strong> in the first textbox.</li>
+          <li>The text before, in my case <strong>rebecca1_</strong>, 
+            is the part of my database name.</li>
+          <li>Record your database name for later use.</li>
           <li>Click "Create Database".</li>
       </ul>
         <h3>Create a user</h3>
@@ -58,11 +79,11 @@
 
         <h3>Import Data</h3>
         <ul>
-          <li>Go back to the cPanel home</li>
-          <li>Scroll back to Databases and click phpMyAdmin</li>
+          <li>Go back to the cPanel home.</li>
+          <li>Scroll back to "Databases" and click "phpMyAdmin".</li>
           <li>Once loaded the process is the same as the <a 
             href="https://blainerobertson.github.io/336d2lv2/views/local_db.html" title="Go to local db instructions">local database</a>. <br>
-          * Note: The database name will have a prefix before "acme"
+          * Note: The database name will have a prefix before "acme".
           </li>
         </ul>
       </p>
@@ -74,7 +95,7 @@
         <li>Place the code above your local connection variables in connection.php</li>
         <li>Then copy the ELSE statement and place it below your local connection variable.</li>
         <li>With the values you recorded, replace the values for the remote connection.</li>
-        <li>Enter localhost for $sever.</li>
+        <li>Enter <strong>localhost</strong> for $server.</li>
       </ul>
       <code>
                 <!-- HTML generated using hilite.me -->
