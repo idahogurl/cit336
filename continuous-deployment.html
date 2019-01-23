@@ -46,8 +46,13 @@
           <li>Click the red "Go to cPanel" button</li>
           <li>Scroll far down to "Files"</li>
           <li>Under files click "FTP Accounts"</li>
-          <li>Create a new login</li>
-          <li>Enter admin for the username and then a password.</li>
+          <li>
+            Under "Add FTP Account" enter <strong>admin</strong> for the
+            username. <br />*Note: Your username is <strong>admin</strong> and
+            does not include the text starting with an @
+          </li>
+
+          <li>Enter a valid password according to the requirements.</li>
           <li>Record these values for later use.</li>
           <li>Remove <strong>/admin</strong> from the directory</li>
           <li>Click the "Create FTP Account" button.</li>
@@ -62,11 +67,11 @@
 
         <h1>Continuous Deployment</h1>
         <p>
-          What if every time you push to master your web site would be updated
-          as well. Look no further than to Continuous Deployment (CD).
-          Continuous deployment is an automated process to deploy your web site
-          changes. GitLab and many other git providers have started providing
-          Continuous Deployment.
+          What if every time you push to master that your web site is updated as
+          well. Look no further than to Continuous Deployment (CD). Continuous
+          deployment is an automated process to deploy your web site changes.
+          GitLab and many other git providers have started providing Continuous
+          Deployment.
         </p>
 
         <p>
@@ -153,15 +158,15 @@
         <h3>Test</h3>
         <figure>
           <figcaption>
-            <small><em>SiteGround My Account screen</em></small>
-          </figcaption>
-          <img src="web-site-address.png" alt="" />
-        </figure>
-        <figure>
-          <figcaption>
             <small><em>Successful Deploy</em></small>
           </figcaption>
           <img src="passed_cd.png" alt="" />
+        </figure>
+        <figure>
+          <figcaption>
+            <small><em>SiteGround My Account screen</em></small>
+          </figcaption>
+          <img src="web-site-address.png" alt="" />
         </figure>
         <ul>
           <li>You need to ensure your deployment was successful.</li>
