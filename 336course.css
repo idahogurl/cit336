@@ -180,8 +180,9 @@ footer {
 
 img,
 video {
-  max-width: 100%;
+  width: 75%;
   height: auto;
+  margin-top: 10px;
 }
 
 mark {
@@ -191,4 +192,10 @@ mark {
 code {
   background-color: #eeeeee;
   color: red;
+  width:75%; 
+  display:block;
+}
+
+figure {
+  margin: 10px 0;
 }

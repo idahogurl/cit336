@@ -36,7 +36,12 @@
         </p>
 
         <h2>Create FTP Account</h2>
-        <img src="ftp-account.png" style="width:50%" alt="" />
+        <figure>
+          <figcaption>
+            <small><em>FTP Account Creation</em></small>
+          </figcaption>
+          <img src="ftp-account.png" alt="" />
+        </figure>
         <ul>
           <li>Log in to siteground.com</li>
           <li>Click the red "Go to cPanel" button</li>
@@ -87,11 +92,7 @@
         ><br /><br />
         <small style="margin: 10px"><em>GitLab Environment Variables</em></small
         ><br />
-        <img
-          src="env-variables.png"
-          alt=""
-          style="width:75%; margin-top: 10px"
-        />
+        <img src="env-variables.png" alt="" />
         <h4>Creation Steps</h4>
         <ul>
           <li>Within GitLab, click Settings > CI/CD in the left sidebar.</li>
@@ -114,48 +115,56 @@
         <h3>Deployment Script</h3>
         Now you need to create the script file
         <strong>.gitlab-ci.yaml</strong> in your master branch.
-
-        <ul>
-          <li>Go to GitLab and open your "acme" project.</li>
-          <li>
-            Once loaded click "+ CI/CD configuration" button above your file
-            listing. <br />
-            <img src="cd-script.png" alt="" style="width:50%; margin: 10px;" />
-          </li>
-          <li>Copy and paste the script content below.</li>
-          <li>Click the green "Commit Changes" button at the bottom.</li>
-        </ul>
-
-        <code style="width:75%; display:block">
+        <figure style="margin: 10px 0">
+          <figcaption>
+            <small><em>Script Creation</em></small>
+          </figcaption>
+          <img src="cd-script.png" alt="" />
+        </figure>
+        <p>
+          <small><em>.gitlab-ci.yaml</em></small>
+        </p>
+        <code>
           <!-- HTML generated using hilite.me -->
           <div
             style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"
           >
             <pre style="margin: 0; line-height: 125%">
-            deploy:
-              script:
-                - apt-get update -qq &amp;&amp; apt-get install -y -qq lftp
-                - lftp -c &quot;set ftp:ssl-allow no; open -u $USERNAME,$PASSWORD $HOST; mirror -Rnev ./ ./public_html/acme --ignore-time --parallel=10 --exclude-glob .git* --exclude .git/&quot;
-              only:
-                - master
-            </pre>
+                    deploy:
+                      script:
+                        - apt-get update -qq &amp;&amp; apt-get install -y -qq lftp
+                        - lftp -c &quot;set ftp:ssl-allow no; open -u $USERNAME,$PASSWORD $HOST; mirror -Rnev ./ ./public_html/acme --ignore-time --parallel=10 --exclude-glob .git* --exclude .git/&quot;
+                      only:
+                        - master
+                    </pre
+            >
           </div>
         </code>
+        <h4>Steps</h4>
+        <ul>
+          <li>Go to GitLab and open your "acme" project.</li>
+          <li>
+            Once loaded click "+ CI/CD configuration" button above your file
+            listing.
+          </li>
+          <li>Copy and paste the script content below.</li>
+          <li>Click the green "Commit Changes" button at the bottom.</li>
+        </ul>
+
         <h3>Test</h3>
+        <figure>
+          <figcaption>
+            <small><em>SiteGround My Account screen</em></small>
+          </figcaption>
+          <img src="web-site-address.png" alt="" />
+        </figure>
         <ul>
           <li>You need to ensure your deployment was successful.</li>
           <li>From the left sidebar, click "CI/CD."</li>
           <li>
             If successful, you should see the most recent job set as Passed.
           </li>
-          <li>
-            Log in to siteground.com to find out your web address.<br />
-            <img
-              src="web-site-address.png"
-              alt=""
-              style="margin: 10px; width: 50%"
-            />
-          </li>
+          <li>Log in to siteground.com to find out your web address.<br /></li>
           <li>
             Enter the URL your browser's address bar with
             <strong>/acme/home.php</strong> at the end.
