@@ -29,7 +29,7 @@
         want to cancel before they bill you the full price. To sign up go to <a href="https://www.siteground.com/studentsprogram/"
           title="SiteGround Setup">
           https://www.siteground.com/studentsprogram/</a>
-        <br> Note: You must use your byui.edu email account when signing up.
+        <br><br>*Note: You must use your byui.edu email account when signing up.
         
         <h1>Creating a Remote DB</h1>
         <h2>Shared Hosting</h2>
@@ -56,30 +56,43 @@
           <li>Log into siteground.com.</li>
           <li>Select "Don’t need help now".</li>
           <li>Click "My Accounts tab".</li>
-          <li>Click on the red "Go to cPanel" button.</li>
-            and if it fails to work read the instruction above to fix.</li>
-          <li>Click "Proceed".</li>
+          <li>Click on the red "Go to cPanel" button.
+            <br>*Note: if it fails to work read the instruction above to fix.</li>
+          <li>Click the "Proceed" button.</li>
         </ul>
         <h3>Create Database</h3>
+        <figure><figcaption>
+          <small><em>SiteGround Database Management</em></small>
+        </figcaption><img src="mysql-setup.png" alt=""></figure>
         <ul>
           <li>Scroll a long way down.</li>
           <li>Under "Databases" click "MySQL Databases".</li>
-          <li>Enter <strong>acme</strong> in the first textbox.</li>
+          <li>Under "Create a New Database"
+          enter <strong>acme</strong> in the New Database textbox (first one).</li>
           <li>The text before, in my case <strong>rebecca1_</strong>, 
             is the part of my database name.</li>
           <li>Record your database name for later use.</li>
           <li>Click "Create Database".</li>
+          <li>Click "Go Back" button.</li>
       </ul>
         <h3>Create a user</h3>
+        <figure>
+          <figcaption>
+            <small><em>Database User Management</em></small>
+          </figcaption>
+          <img src="add-user.png" alt="">
+        </figure>
         <ul>
           <li>Enter <strong>iClient</strong> in the username textbox.</li>
           <li>The text before, in my case <strong>rebecca1_</strong>, is the part of my username.</li>
           <li>Enter a password.</li>
           <li>Record the username and password for later use.</li>
-          <li>Click "Create a User"</li>
-          <li>Click the "Add a User to a Database" button</li>
-          <li>Check SELECT, DELETE, INSERT, and UPDATE from the check-boxes</li>
+          <li>Click the "Create a User" button.</li>
+          <li>Click "Go Back" button.</li>
+          <li>Click the "Add" button under "Add a User to a Database" button.</li>
+          <li>Check SELECT, DELETE, INSERT, and UPDATE from the check-boxes.</li>
           <li>Click "Make Changes"</li>
+          <li>Click "Go Back" button.</li>
         </ul>
 
         <h3>Import Data</h3>
@@ -96,14 +109,17 @@
       <h2>Modify connection.php</h2>
       <ul>
         <li>Open your connection.php file</li>
-        <li>From the code below, copy the IF statement on lines 5 and 6
+        <li>From the code below, copy the IF statement below the function acmeConnect. 
+          <br>*Note: Make sure to include the curly brace.
         <li>Place the code above your local connection variables in connection.php</li>
-        <li>Then copy the ELSE statement and place it below your local connection variable.</li>
+        <li>Then copy the ELSE statement and place it below your local connection variable.
+          <br>*Note: Make sure to include the curly braces.
+        </li>
         <li>With the values you recorded, replace the values for the remote connection.</li>
         <li>Enter <strong>localhost</strong> for $server.</li>
       </ul>
       <code>
-        <div style="width:75%">     <!-- HTML generated using hilite.me -->
+         <!-- HTML generated using hilite.me -->
           <div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
             <table>
               <tr>
@@ -180,7 +196,6 @@
                 </tr>
               </table>
             </div>
-          </div>
         </code>
         <img src="connection-php.png" alt="" style="width: 50%">
   </div>
