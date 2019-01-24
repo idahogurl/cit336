@@ -37,32 +37,27 @@
         <h2>Create FTP Account</h2>
         <figure>
           <figcaption>
-            <small><em>FTP Account Creation</em></small>
+            <small><em>FTP Account Information</em></small>
           </figcaption>
           <img src="ftp-account.png" alt="" />
         </figure>
         <ul>
           <li>Log in to siteground.com</li>
-          <li>Click the red "Go to cPanel" button</li>
-          <li>Scroll far down to "Files"</li>
-          <li>Under files click "FTP Accounts"</li>
           <li>
-            Under "Add FTP Account" enter <strong>admin</strong> for the
-            username.
+            Find the "cPanel Username:" row. Its value is your FTP username.
+          </li>
+          <li>Click the "Change Password" button to the right.</li>
+          <li>
+            Enter a password without special characters. Its value is your FTP
+            password.
+          </li>
+          <li>Click the "Update Password" button.</li>
+          <li>Find the "FTP Details:" row.</li>
+          <li>
+            Under it you'll see "FTP Hostname:". Its value is your FTP host.
           </li>
           <li>
-            Enter a valid password according to the requirements.<br />
-            <br />*Note: Record this for later use.
-          </li>
-          <li>Remove ALL the text from the directory textbox</li>
-          <li>Click the "Create FTP Account" button.</li>
-          <li>Once finished you will see your new user under "FTP Accounts"</li>
-          <li>
-            Click the "Configure FTP Client" link to the right of your new user
-          </li>
-          <li>
-            This opens a panel below for you to get the FTP host and username.
-            <br />*Note: Record these values for later use.
+            The host, username, and password values will be used later on.
           </li>
         </ul>
 
@@ -100,11 +95,13 @@
           frameborder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
-        ></iframe
-        ><br /><br />
-        <small style="margin: 10px"><em>GitLab Environment Variables</em></small
-        ><br />
-        <img src="env-variables.png" alt="" />
+        ></iframe>
+        <figure>
+          <figcaption>
+            <small><em>GitLab Environment Variables</em></small>
+          </figcaption>
+          <img src="env-variables.png" alt="" />
+        </figure>
         <h4>Creation Steps</h4>
         <ul>
           <li>Within GitLab, click Settings > CI/CD in the left sidebar.</li>
@@ -114,8 +111,8 @@
             be UPPERCASE.
           </li>
           <li>
-            Enter the host, username, and password from the FTP account you
-            created above.
+            Enter the host, username, and password from the FTP host, username,
+            and password respectively.
           </li>
           <li>Click the "Save" button.</li>
         </ul>
