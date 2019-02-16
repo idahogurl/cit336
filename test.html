@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="prism.css" rel="stylesheet"></link>
+</head>
+<body>
+    <pre class="line-numbers language-php">
+        <code class="language-php">
+  function acmeConnect(){
+    if (stripos($_SERVER["HTTP_HOST"], 'localhost') === 0 
+        || stripos($_SERVER["HTTP_HOST"], '127.0.0.1') === 0) {
+      // Running on local server   
+      $server = 'localhost';
+      $dbname= 'acme';
+      $username = 'iClient';
+      $password = 'fCXxC7CW7TVU9HxH';
+    } else {
+      // Running on remote server
+      $server = '';
+      $dbname= '';
+      $username = '';
+      $password = '';
+    }
+      
+    $dsn = "mysql:host=$server;dbname=$dbname";
+    $options = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
+  
+    // Create the actual connection object and assign it to a variable
+    try {
+      $link = new PDO($dsn, $username, $password, $options);
+      return $link;
+    } catch(PDOException $e) {
+      header('Location: /acme/view/500.php');
+      exit;
+    }
+  }
+    </code>
+    </pre>
+    <script src="prism.js"></script>
+</body>
+</html>
