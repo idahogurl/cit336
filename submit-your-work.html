@@ -64,7 +64,7 @@
         <p>
           Sometimes you cannot merge because of competing changes (your changes
           vs. another person's changes to the same file) that Git cannot resolve
-          without help. Since you are the only developer working on your code
+          without help. This is called a merge conflict. Since you are the only developer working on your code
           this should rarely happen. If it does happen, please contact your
           instructor for help. Resolving merge conflicts is beyond the scope of
           this course.
@@ -85,15 +85,6 @@
           >.
         </p>
         <h3>Create a Branch in VS Code</h3>
-        <h4>Video Demonstration</h4>
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/cWC_-I9f3pA"
-          frameborder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
         <h4>Steps</h4>
         <ol>
           <li>
@@ -109,32 +100,31 @@
             enhancement-[enhancement #], i.e., Enhancement 1 would be
             enhancement-1.
           </li>
-          <li>Open the Command Palette again.</li>
-          <li>
-            Once opened, type <strong>Git: Publish Branch</strong> and press
-            <strong>Enter</strong>.
-          </li>
-          <li>Open the "acme" project in GitLab</li>
-          <li>
-            Click Repository > Branches in the left sidebar and ensure your
-            branch it is listed.
-          </li>
         </ol>
+         <h2>Committing and Pushing Changes</h2>
+          <p>As you work, you should make periodic commits. A commit is when your file changes are saved to your local repository. Unlike saving to your computer, you do not need to commit for every little change. Commit when
+          you have a portion of work done. "Add stylesheet for homepage" or "Fix hero image for tablet" are good examples of commit messages. Remember a commit is local until you "push" it to your Git host.</p>
+
+          <p>This video demostrates how to commit and push changes, but do not actually complete the steps on your computer. 
+          <strong style="text-transform: uppercase; color: red;">In other words, do not commit anything at this point.</strong></p>
+        <p>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/B8RSMBSzFuA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <h1>Submitting Your Work</h1>
         <h2 id="merge">Merge Requests</h2>
         <p>
           A Merge Request is merely a request to merge your branch of code
           changes into another branch; usually, this will be the "master"
-          branch. GitHub calls them a "Pull Request."
+          branch. GitHub calls them a "Pull Request." 
         </p>
         <p>
           Merge requests give the ability for another individual to review and
           discuss the proposed changes. You will have your code changes reviewed
-          by me, and then I will merge your branch into the "master" branch. The
+          by your instructor, who will then merge your branch into the "master" branch. The
           creation date of the merge request serves as your assignment
           submission date. If your merge request is created after the due date
           then it is late.
         </p>
+        <p>You must have your commits pushed before you create your merge request. Unless the merge request is locked, you don't have to create a new merge request if you need to add changes prior to the due date. Since commits are dated your instructor will know if you try to sneak in changes before its graded.</p>
         <p>
           Do not wait for your merge request to be merged into "master" for you
           to start the next assignment. Just create a new branch from the branch
@@ -142,6 +132,7 @@
           semester, you should have 11 branches since we won't be deleting
           branches after merge.
         </p>
+
         <h3>Create Merge Request</h3>
         <h4>Video Demonstration</h4>
         <iframe
@@ -159,14 +150,13 @@
             pushed your changes to GitLab.
           </li>
           <li>Open your browser and go to your "acme" project inside GitLab</li>
-          <li>Click Repository > Branches in the left sidebar.</li>
+          <li>Click Repository &gt; Branches in the left sidebar.</li>
           <li>Find your branch and click the white "Merge request" button.</li>
           <li>Remove "WIP:" from your merge request title.</li>
           <li>
             Enter the url of your video recording in the description area.
           </li>
-          <li>Click on the "Approvers" textbox and type in Rebecca Vest.</li>
-          <li>Click on my name in the search results.</li>
+          <li>Click on the "Assignee" dropdown and click on my name.</li>
           <li>Click on the "Submit merge request" button.</li>
         </ol>
         <p>
@@ -177,6 +167,11 @@
             request to submit it.
           </strong>
         </p>
+        <h2>Workflow</h2>
+        <p>To help you remember the steps in starting and submitting your assignments, here is a diagram to illustrate
+        the process.</p>
+        <p><a href="workflow.pdf" title="Download workflow diagram">Download</a></p>
+        <img src="images/workflow.svg" style="width: 50%">
       </div>
     </div>
   </body>

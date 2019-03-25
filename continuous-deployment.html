@@ -34,33 +34,6 @@
           files you want to upload or copy to the web host.
         </p>
 
-        <h2>Create FTP Account</h2>
-        <figure>
-          <figcaption>
-            <small><em>FTP Account Information</em></small>
-          </figcaption>
-          <img src="images/ftp-account.png" alt="" />
-        </figure>
-        <ul>
-          <li>Log in to siteground.com</li>
-          <li>
-            Find the "cPanel Username:" row. Its value is your FTP username.
-          </li>
-          <li>Click the "Change Password" button to the right.</li>
-          <li>
-            Enter a password without special characters. Its value is your FTP
-            password.
-          </li>
-          <li>Click the "Update Password" button.</li>
-          <li>Find the "FTP Details:" row.</li>
-          <li>
-            Under it you'll see "FTP Hostname:". Its value is your FTP host.
-          </li>
-          <li>
-            The host, username, and password values will be used later on.
-          </li>
-        </ul>
-
         <p>
           The downside to using an FTP client is that you manually have to
           upload your web site with your changes. It becomes tedious to upload
@@ -80,12 +53,11 @@
         <p>
           To implement Continuous Deployment, you need a script file. A script
           file contains an ordered set of commands to tell GitLab how to deploy
-          your changes. This file will be provided to you below. You also need
-          to create environment variables.
+          your changes. You should already have this file (.gitlab-ci.yml) inside your repository.
         </p>
-        <h3>Create Environment Variables</h3>
+        <h3>Environment Variables</h3>
         <p>
-          Environment variables are a dependency of the script file. Here is a
+          Environment variables are a dependency of the script file in your repository. Here is a
           short video to teach you about environment variables.
         </p>
         <iframe
@@ -96,105 +68,13 @@
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
         ></iframe>
-        <figure>
-          <figcaption>
-            <small><em>GitLab Environment Variables</em></small>
-          </figcaption>
-          <img src="images/env-variables.png" alt="" />
-        </figure>
-        <h4>Creation Steps</h4>
+        <h4>Environment Variables in GitLab</h4>
         <ul>
-          <li>Within GitLab, click Settings > CI/CD in the left sidebar.</li>
+          <li>Within GitLab, click Settings &gt; CI/CD in the left sidebar.</li>
           <li>To the right, expand "Environment variables".</li>
-          <li>
-            Enter these variable names: HOST, USERNAME, and PASSWORD. These must
-            be UPPERCASE.
-          </li>
-          <li>
-            Enter the host, username, and password from the FTP host, username,
-            and password respectively.
-          </li>
-          <li>Click the "Save" button.</li>
+          <li>You will see a few variables are already created for you by your instructor.</li>
+          <li><strong style="color: red; text-transform: uppercase;">Please refrain from changing any of these variables or else you will break your web site.</strong></li>
         </ul>
-
-        <h3>Deployment Script</h3>
-        Now you need to create the script file
-        <strong>.gitlab-ci.yml</strong> in your master branch.
-        <figure style="margin: 10px 0">
-          <figcaption>
-            <small><em>Script Creation</em></small>
-          </figcaption>
-          <img src="images/cd-script.png" alt="" />
-        </figure>
-        <p>
-          <small><em>.gitlab-ci.yml</em></small>
-        </p>
-        <code>
-          <!-- HTML generated using hilite.me -->
-          <div
-            style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"
-          >
-            <pre style="margin: 0; line-height: 125%">
-                    deploy:
-                      script:
-                        - apt-get update -qq &amp;&amp; apt-get install -y -qq lftp
-                        - lftp -c &quot;set ftp:ssl-allow no; open -u $USERNAME,$PASSWORD $HOST; mirror -Rnev ./ ./public_html/acme --ignore-time --parallel=10 --exclude-glob .git* --exclude .git/&quot;
-                      only:
-                        - master
-                    </pre
-            >
-          </div>
-        </code>
-        <h4>Steps</h4>
-        <ul>
-          <li>Go to GitLab and open your "acme" project.</li>
-          <li>
-            Once loaded click "+ CI/CD configuration" button above your file
-            listing.
-          </li>
-          <li>Copy and paste the script content above.</li>
-          <li>Click the green "Commit Changes" button at the bottom.</li>
-        </ul>
-
-        <h3>Test</h3>
-        <figure>
-          <figcaption>
-            <small
-              ><em>Successful Deploy with "Rerun" button circled</em></small
-            >
-          </figcaption>
-          <img src="images/cd-passed.png" alt="" />
-        </figure>
-        <figure>
-          <figcaption>
-            <small><em>SiteGround My Account screen</em></small>
-          </figcaption>
-          <img src="images/web-site-address.png" alt="" />
-        </figure>
-        <ul>
-          <li>You need to ensure your deployment was successful.</li>
-          <li>From the left sidebar, click CI/CD > Jobs</li>
-          <li>
-            It takes about a minute for the deployment to complete so you may
-            see the status set as Running.
-          </li>
-          <li>
-            Once finished you should see the most recent job status set as
-            Passed.
-          </li>
-          <li>
-            If the status is Failed, check that values of your environment
-            variables are correct. You can then click the "Rerun" button to the
-            far right of the failed job.
-          </li>
-          <li>Log in to siteground.com to find out your web address.<br /></li>
-          <li>
-            Enter the URL into your browser's address bar with
-            <strong>/acme/home.php</strong> at the end.
-          </li>
-          <li>Ensure your web site now has content.</li>
-        </ul>
-        <img src="images/" alt="" />
       </div>
     </div>
   </body>
