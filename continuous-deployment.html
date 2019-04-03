@@ -1,201 +1,62 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Continuous Deployment | Backend Web Development</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="336course.css" />
-  </head>
-  <body>
+    </link>
+</head>
+
+<body>
     <div id="main" class="splash">
-      <div id="header"><img src="images/largeBanner.jpg" alt="Course Banner" /></div>
-      <div id="article">
-        <h1>Deployment</h1>
-        <p>
-          By now you are wondering how to get your files to our web host. This
-          process is called deployment. The most common deployment method is the
-          usage of the File Transfer Protocol (FTP). What's FTP? Watch the video
-          below.
-        </p>
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/PeiXwNHEJo0"
-          frameborder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-
-        <p>
-          So to use FTP you need an FTP client. Using an FTP client is
-          relatively straight forward. You enter the URL of the FTP server and
-          your account username and password. Once connected, you select the
-          files you want to upload or copy to the web host.
-        </p>
-
-        <h2>Create FTP Account</h2>
-        <figure>
-          <figcaption>
-            <small><em>FTP Account Information</em></small>
-          </figcaption>
-          <img src="images/ftp-account.png" alt="" />
-        </figure>
-        <ul>
-          <li>Log in to siteground.com</li>
-          <li>
-            Find the "cPanel Username:" row. Its value is your FTP username.
-          </li>
-          <li>Click the "Change Password" button to the right.</li>
-          <li>
-            Enter a password without special characters. Its value is your FTP
-            password.
-          </li>
-          <li>Click the "Update Password" button.</li>
-          <li>Find the "FTP Details:" row.</li>
-          <li>
-            Under it you'll see "FTP Hostname:". Its value is your FTP host.
-          </li>
-          <li>
-            The host, username, and password values will be used later on.
-          </li>
-        </ul>
-
-        <p>
-          The downside to using an FTP client is that you manually have to
-          upload your web site with your changes. It becomes tedious to upload
-          every little change when you already have to push your changes to
-          GitLab. That's when Continuous Deployment comes into play.
-        </p>
-
-        <h1>Continuous Deployment</h1>
-        <p>
-          What if every time you push to master that your web site is updated as
-          well. Look no further than to Continuous Deployment (CD). Continuous
-          deployment is an automated process to deploy your web site changes.
-          GitLab and many other git providers have started providing Continuous
-          Deployment.
-        </p>
-
-        <p>
-          To implement Continuous Deployment, you need a script file. A script
-          file contains an ordered set of commands to tell GitLab how to deploy
-          your changes. This file will be provided to you below. You also need
-          to create environment variables.
-        </p>
-        <h3>Create Environment Variables</h3>
-        <p>
-          Environment variables are a dependency of the script file. Here is a
-          short video to teach you about environment variables.
-        </p>
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/QRg_ennTwHY"
-          frameborder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-        <figure>
-          <figcaption>
-            <small><em>GitLab Environment Variables</em></small>
-          </figcaption>
-          <img src="images/env-variables.png" alt="" />
-        </figure>
-        <h4>Creation Steps</h4>
-        <ul>
-          <li>Within GitLab, click Settings > CI/CD in the left sidebar.</li>
-          <li>To the right, expand "Environment variables".</li>
-          <li>
-            Enter these variable names: HOST, USERNAME, and PASSWORD. These must
-            be UPPERCASE.
-          </li>
-          <li>
-            Enter the host, username, and password from the FTP host, username,
-            and password respectively.
-          </li>
-          <li>Click the "Save" button.</li>
-        </ul>
-
-        <h3>Deployment Script</h3>
-        Now you need to create the script file
-        <strong>.gitlab-ci.yml</strong> in your master branch.
-        <figure style="margin: 10px 0">
-          <figcaption>
-            <small><em>Script Creation</em></small>
-          </figcaption>
-          <img src="images/cd-script.png" alt="" />
-        </figure>
-        <p>
-          <small><em>.gitlab-ci.yml</em></small>
-        </p>
-        <code>
-          <!-- HTML generated using hilite.me -->
-          <div
-            style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"
-          >
-            <pre style="margin: 0; line-height: 125%">
-                    deploy:
-                      script:
-                        - apt-get update -qq &amp;&amp; apt-get install -y -qq lftp
-                        - lftp -c &quot;set ftp:ssl-allow no; open -u $USERNAME,$PASSWORD $HOST; mirror -Rnev ./ ./public_html/acme --ignore-time --parallel=10 --exclude-glob .git* --exclude .git/&quot;
-                      only:
-                        - master
-                    </pre
-            >
-          </div>
-        </code>
-        <h4>Steps</h4>
-        <ul>
-          <li>Go to GitLab and open your "acme" project.</li>
-          <li>
-            Once loaded click "+ CI/CD configuration" button above your file
-            listing.
-          </li>
-          <li>Copy and paste the script content above.</li>
-          <li>Click the green "Commit Changes" button at the bottom.</li>
-        </ul>
-
-        <h3>Test</h3>
-        <figure>
-          <figcaption>
-            <small
-              ><em>Successful Deploy with "Rerun" button circled</em></small
-            >
-          </figcaption>
-          <img src="images/cd-passed.png" alt="" />
-        </figure>
-        <figure>
-          <figcaption>
-            <small><em>SiteGround My Account screen</em></small>
-          </figcaption>
-          <img src="images/web-site-address.png" alt="" />
-        </figure>
-        <ul>
-          <li>You need to ensure your deployment was successful.</li>
-          <li>From the left sidebar, click CI/CD > Jobs</li>
-          <li>
-            It takes about a minute for the deployment to complete so you may
-            see the status set as Running.
-          </li>
-          <li>
-            Once finished you should see the most recent job status set as
-            Passed.
-          </li>
-          <li>
-            If the status is Failed, check that values of your environment
-            variables are correct. You can then click the "Rerun" button to the
-            far right of the failed job.
-          </li>
-          <li>Log in to siteground.com to find out your web address.<br /></li>
-          <li>
-            Enter the URL into your browser's address bar with
-            <strong>/acme/home.php</strong> at the end.
-          </li>
-          <li>Ensure your web site now has content.</li>
-        </ul>
-        <img src="images/" alt="" />
-      </div>
+        <div id="header"><img src="images/largeBanner.jpg" alt="Course Banner" /></div>
+        <div id="article">
+            <h1>Deployment</h1>
+            <p>
+                By now you are wondering how to get your files to our web host. This
+                process is called deployment. There are several methods to send files to
+                a remote server with File Transfer Protocol (FTP) and SSH (Secure Shell) being
+                most common.
+            </p>
+            <h2>FTP (File Transfer Protocol)<h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/PeiXwNHEJo0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <h2>SSH (Secure Shell)</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/z7jVOenqFYk?start=0&end=100" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <p>
+                The downside to using an FTP client or SSH client is that you manually have to
+                upload your web site with your changes. It becomes tedious to upload
+                every little change when you already have to push your changes to
+                GitLab. That's when Continuous Deployment comes into play.
+            </p>
+            <h1>Continuous Deployment</h1>
+            <p>
+                What if every time you committed or merged your web site is updated with the
+                changes? Look no further than to Continuous Deployment (CD). GitLab provides built-in
+                Continuous Deployment. Continuous deployment is an automated process to deploy your web site changes. Your repository has been setup for is already setup to deploy each time a commit is pushed to "master."
+            </p>
+            <p>
+                To implement Continuous Deployment, you need a script file. This script
+                file contains an ordered set of commands to tell GitLab how to deploy
+                your changes. You should already have this file (.gitlab-ci.yml) inside your repository.
+            </p>
+            <h2>Create Environment Variables</h2>
+            <p>
+                Environment variables are a dependency of the script file in your repository. Here is a
+                short video to teach you about environment variables.
+            </p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/QRg_ennTwHY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <h3>Environment Variables in GitLab</h3>
+            <ul>
+                <li>Within GitLab, click Settings &gt; CI/CD in the left sidebar.</li>
+                <li>To the right, expand "Environment variables".</li>
+                <li>You will see a few variables are already created for you by your instructor.</li>
+                <li><strong style="color: red; text-transform: uppercase;">Please refrain from changing any of these variables or else you will break your web site.</strong></li>
+            </ul>
+        </div>
     </div>
-  </body>
+</body>
+
 </html>

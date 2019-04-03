@@ -1,58 +1,48 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Submit Your Work | Backend Web Development</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="336course.css" />
-  </head>
-  <body>
+</head>
+
+<body>
     <div id="main" class="splash">
-      <div id="header">
-        <img src="images/largeBanner.jpg" alt="Course Banner" />
-      </div>
-      <div id="article">
-        <h1>Starting Your Work</h1>
-        <h2>Introduction</h2>
-        <p>
+        <div id="header">
+            <img src="images/largeBanner.jpg" alt="Course Banner" />
+        </div>
+        <div id="article">
+      <h1>Starting Your Work</h1>
+      <h2>Introduction</h2>
+      <p>
           We will be using Git to submit assignments using
           <a href="#branches" title="Jump to branches section">branches</a> and
-          <a href="#merge" title="Jump to merge requests section">
-            merge requests </a
-          >. You will not submit anything in iLearn with the exception of the
-          weekly report.
-        </p>
-        <p>
+          <a href="#merge" title="Jump to merge requests section">merge requests</a>. 
+          You will not submit anything in iLearn with the exception of the weekly report.
+      </p>
+      <p>
           To use Git, we have GitLab hosting our repositories. GitLab,
           Bitbucket, GitHub are the most well known Git hosts. Git is a version
           control system. For those unfamiliar with Git, here is a video that
           gives a high-level explanation.
-        </p>
-        <br />
-        <iframe
-          src="https://player.vimeo.com/video/41027679"
-          width="640"
-          height="360"
-          frameborder="0"
-          webkitallowfullscreen
-          mozallowfullscreen
-          allowfullscreen
-        ></iframe>
-        <br />
-        <br />
-        <p>So, Git provides:</p>
-
-        <ol>
+      </p>
+      <br />
+      <iframe src="https://player.vimeo.com/video/41027679" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      <br />
+      <br />
+      <p>So, Git provides:</p>
+      <ol>
           <li>the ability for multiple individuals to work on the same code</li>
           <li>
-            a timeline of saves called commits, where each has a description and
-            date
+              a timeline of saves called commits, where each has a description and
+              date
           </li>
-        </ol>
-
-        <h2 id="branches">Branching</h2>
-        <p>
+      </ol>
+      <h2 id="branches">Branching</h2>
+      <p>
           The way Git implements the first functionality is through the use of
           branches. When a repository is created, a branch called "master" is
           automatically created. From "master", individuals create new branches.
@@ -60,66 +50,53 @@
           into "master" by the
           <a href="#merge" title="Jump to merge requests">merge request</a>
           approver once approved.
-        </p>
-        <p>
+      </p>
+      <p>
           Sometimes you cannot merge because of competing changes (your changes
           vs. another person's changes to the same file) that Git cannot resolve
-          without help. Since you are the only developer working on your code
+          without help. This is called a merge conflict. Since you are the only developer working on your code
           this should rarely happen. If it does happen, please contact your
           instructor for help. Resolving merge conflicts is beyond the scope of
           this course.
-        </p>
-        <p>
+      </p>
+      <p>
           Before you start an enhancement, you must create a branch as outlined
           in the video and steps below. As you work, you will commit your
           changes to that branch.
-        </p>
-        <p>
+      </p>
+      <p>
           If you want to learn more about branching and merging, you can read
           this
-          <a
-            href="https://thenewstack.io/dont-mess-with-the-master-working-with-branches-in-git-and-github/"
-            target="_blank"
-            title="Open article for reading"
-            >article</a
-          >.
-        </p>
-        <h3>Create a Branch in VS Code</h3>
-        <h4>Video Demonstration</h4>
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/cWC_-I9f3pA"
-          frameborder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-        <h4>Steps</h4>
-        <ol>
+          <a href="https://thenewstack.io/dont-mess-with-the-master-working-with-branches-in-git-and-github/" target="_blank" title="Open article for reading">article</a>.
+      </p>
+      <h3>Create a Branch in VS Code</h3>
+      <h4>Steps</h4>
+      <ol>
           <li>
-            Within VS Code, open the Command Palette (Ctrl+Shift+P on Windows or
-            ⌘+Shift+P on Mac).
+              Within VS Code, open the Command Palette (Ctrl+Shift+P on Windows or
+              ⌘+Shift+P on Mac).
           </li>
           <li>
-            Once opened, type <strong>Git: Create Branch</strong> and press
-            <strong>Enter</strong>.
+              Once opened, type <strong>Git: Create Branch</strong> and press
+              <strong>Enter</strong>.
           </li>
           <li>
-            When asked for a branch name, use this format:
-            enhancement-[enhancement #], i.e., Enhancement 1 would be
-            enhancement-1.
+              When asked for a branch name, use this format:
+              enhancement-[enhancement #], i.e., Enhancement 1 would be
+              enhancement-1.
           </li>
-          <li>Open the Command Palette again.</li>
-          <li>
-            Once opened, type <strong>Git: Publish Branch</strong> and press
-            <strong>Enter</strong>.
-          </li>
-          <li>Open the "acme" project in GitLab</li>
-          <li>
-            Click Repository > Branches in the left sidebar and ensure your
-            branch it is listed.
-          </li>
-        </ol>
+      </ol>
+      <h2>Committing and Pushing Changes</h2>
+      <p>
+        As you work, you should make periodic commits. A commit is when your file changes are saved
+        to your local repository. Unlike saving to your computer, you do not need to commit for every little change. Commit when you have a portion of work done. "Add stylesheet for homepage" or "Fix hero image for tablet" are good examples of commit messages. Remember a commit is local until you "push" it to your Git host.</p>
+      <p>
+        This video demostrates how to commit and push changes, but do not actually complete the steps on your computer.
+        <strong style="text-transform: uppercase; color: red;">
+          In other words, do not commit anything at this point.
+        </strong>
+      </p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/B8RSMBSzFuA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <h1>Submitting Your Work</h1>
         <h2 id="merge">Merge Requests</h2>
         <p>
@@ -130,11 +107,14 @@
         <p>
           Merge requests give the ability for another individual to review and
           discuss the proposed changes. You will have your code changes reviewed
-          by me, and then I will merge your branch into the "master" branch. The
+          by your instructor, who will then merge your branch into the "master" branch. The
           creation date of the merge request serves as your assignment
           submission date. If your merge request is created after the due date
           then it is late.
         </p>
+        <p>
+          You must have your commits pushed before you create your merge request. Unless the merge request is locked, you don't have to create a new merge request if you need to add changes prior to the due date. Since commits are dated your instructor will know if you try to sneak in changes before its graded.
+      </p>
         <p>
           Do not wait for your merge request to be merged into "master" for you
           to start the next assignment. Just create a new branch from the branch
@@ -144,40 +124,39 @@
         </p>
         <h3>Create Merge Request</h3>
         <h4>Video Demonstration</h4>
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/OlYdlKWIKJg"
-          frameborder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/OlYdlKWIKJg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <h4>Steps</h4>
         <ol>
           <li>
-            Before you start, you should have already created a branch and
-            pushed your changes to GitLab.
+              Before you start, you should have already created a branch and
+              pushed your changes to GitLab.
           </li>
           <li>Open your browser and go to your "acme" project inside GitLab</li>
-          <li>Click Repository > Branches in the left sidebar.</li>
+          <li>Click Repository &gt; Branches in the left sidebar.</li>
           <li>Find your branch and click the white "Merge request" button.</li>
           <li>Remove "WIP:" from your merge request title.</li>
           <li>
-            Enter the url of your video recording in the description area.
+              Enter the url of your video recording in the description area.
           </li>
-          <li>Click on the "Approvers" textbox and type in Rebecca Vest.</li>
-          <li>Click on my name in the search results.</li>
+          <li>Click on the "Assignee" dropdown and click on my name.</li>
           <li>Click on the "Submit merge request" button.</li>
         </ol>
         <p>
-          <strong>
-            For every enhancement, you will follow the branch and merge request
-            steps. You will create a branch that you will commit to as you work.
-            When you've finished committing all your changes then create a merge
-            request to submit it.
-          </strong>
+            <strong>
+                For every enhancement, you will follow the branch and merge request
+                steps. You will create a branch that you will commit to as you work.
+                When you've finished committing all your changes then create a merge
+                request to submit it.
+            </strong>
         </p>
+        <h2>Workflow</h2>
+        <p>
+          To help you remember the steps in starting and submitting your assignments, here is a diagram to illustrate the process.</p>
+        <p><a href="workflow.pdf" title="Download workflow diagram">Download</a></p>
+        <img src="images/workflow.svg" style="width: 50%">
+        <h2>Locate Merge Request</h2>
       </div>
     </div>
-  </body>
+</body>
+
 </html>
