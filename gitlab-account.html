@@ -1,117 +1,78 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
+
+<head>
     <meta charset="utf-8" />
     <title>GitLab Account | Backend Web Development</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="336course.css" />
-  </head>
+</head>
 
-  <body>
+<body>
     <div id="main" class="splash">
-      <div id="header">
-        <img src="images/largeBanner.jpg" alt="Course Banner" />
-      </div>
-      <div id="article">
-        <h1>Git Version Control</h1>
-        <h2>Introduction</h2>
+        <div id="header">
+            <img src="images/largeBanner.jpg" alt="Course Banner" />
+        </div>
+        <div id="article">
+            <h1>Git Version Control</h1>
+            <h2>Introduction</h2>
+            <p>
+                We will be using Git version control to submit assignments.
+                Git is a version control system developed in 2005 by Linus Torvalds (creator of the Linux operating system). For those unfamiliar with Git, here is a video that gives a high-level explanation.
+            </p>
+      <br />
+      <iframe src="https://player.vimeo.com/video/41027679" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      
+        <h2>Setup GitLab Account</h2>
         <p>
-          We will be using Git version control to submit assignments. You will
-          make a branch of your master repository, commit to that branch, and
-          then create a merge request for me to review. If this sounds Greek to
-          you, don't worry, I will cover this in video tutorials. Those who had
-          CIT 230 may already be familiar with Git version control.
+        GitLab, GitHub and Bitbucket are the most well known Git hosts. They enable your repository to be available to those on the Internet. A repository is a digital directory or storage space where you can access your project, its files, and all the versions of its files that Git saves.
+
+        You will be using GitLab as it provides for free
+        the features we need whereas GitHub charges for them.
         </p>
-        <h2>Setup GitLab Account and Repository</h2>
-        <!-- <h3>Video Demonstration</h3> -->
-        <h3>Create an Account</h3>
-        <ol>
-          <li>
-            Open a web browser and type
-            <a
-              href="http://www.gitlab.com"
-              target="_blank"
-              title="Go to GitLab.com"
-              >"gitlab.com."</a
-            >
-          </li>
-          <li>
-            Once the GitLab website loads go to the upper-right corner, click
-            "Register."
-          </li>
-          <li>
-            Finish the remainder of the form as directed and click "Register."
-          </li>
-          <li>
-            You will receive a verification email shortly from GitLab. If you do
-            not receive one, check your Spam or Junk folder.
-          </li>
-          <li>Open the email and follow the directions given.</li>
-        </ol>
-        <h3>Create a Repository</h3>
-        <ol>
-          <li>
-            Log into your GitLab account if you are not already logged in.
-          </li>
-          <li>
-            Open a web browser and type
-            <a
-              href="http://www.gitlab.com/idahogurl/acme"
-              target="_blank"
-              title="Go to Acme repository"
-              >"gitlab.com."</a
-            >
-          </li>
-          <li>
-            Once the page is loaded, look to the right and click the "Fork" button. It is to the left of the blue "Clone" button.</li>
-          </li>
-          <li>
-            Click on your account image to select it as the namespace.
-          </li>
-        </ol>
-        <h2>Change Visiblity</h2>
-        <ol>
-          <li>
-            Log into your GitLab account. If you are already logged go to the
-            upper left corner and click the GitLab logo. This will take you to
-            your project list.
-          </li>
-          <li>When the project list loads click on your "acme" project.</li>
-          <li>
-            Locate the sidebar on the left and click "Settings". It is the last
-            item in the sidebar.
-          </li>
-          <li>Once loaded click "Members" underneath it.</li>
-        </ol>
-        <h2>Add Me as a Collaborator</h2>
-        <ol>
-          <li>
-            Log into your GitLab account. If you are already logged go to the
-            upper left corner and click the GitLab logo. This will take you to
-            your project list.
-          </li>
-          <li>When the project list loads click on your "acme" project.</li>
-          <li>
-            Locate the sidebar on the left and click "Settings". It is the last
-            item in the sidebar.
-          </li>
-          <li>Once loaded click "Members" underneath it.</li>
-          <li>
-            In the right panel, click in the textbox below "Select members to
-            invite."
-          </li>
-          <li>Type "idahogurl" or "Rebecca Vest" to find my account.</li>
-          <li>
-            Once the search completes, select "Rebecca Vest" from the result.
-          </li>
-          <li>Under "Choose a role permission," select "Maintainer."</li>
-          <li>Click "Add to project."</li>
-        </ol>
-      </div>
-      <!-- end #article -->
+            <h3>Create an Account</h3>
+            <ol>
+                <li>
+                    Open a web browser and type
+                    <a href="http://www.gitlab.com" target="_blank" title="Go to GitLab.com">"gitlab.com."</a>
+                </li>
+                <li>
+                    Once the GitLab website loads go to the upper-right corner, click
+                    "Register."
+                </li>
+                <li>
+                    Finish the remainder of the form as directed and click "Register."
+                </li>
+                <li>
+                    You will receive a verification email shortly from GitLab. If you do
+                    not receive one, check your Spam or Junk folder.
+                </li>
+                <li>Open the email and follow the directions given.</li>
+            </ol>
+            <p>After you create a GitLab account, open this <a href="https://docs.google.com/spreadsheets/d/1-cOYyiyVHiKPn0WvItUB5StVMtkwIRLODRnmuFE6wG0/edit?usp=sharing">spreadsheet</a> and enter your username. Add a new row with your name and BYU-I username if your name is not listed. Your instructor will use this information to create your repository and web site. You will be emailed the links to both of them later</p>
+            <h3>Change Notifications</h3>
+            <ol>
+              <li>Log into your GitLab account. If you are already logged go to the upper-right corner and click on your profile picture.</li>
+            <li>Once the menu appears click "Settings".</li>
+            <li>
+                Locate the sidebar on the left and click "Notifications".
+            </li>
+            <li>
+              <p>In the right panel, click on the "Global" dropdown belonging to your "acme" repository.</p>
+              <img src="images/notifications.png" style="width: 50%"/>
+            </li>
+            <li>
+              <p>Select the "Custom" selection and check the options other than "Close merge request", 
+                  "Merged merge request", and "Failed pipeline"</p>
+              <img src="images/custom-notifications.png" style="width: 30%"/>
+            </li>
+            </ol>
+        </div>
+        <!-- end #article -->
     </div>
     <p>
-      <script src="/content/enforced/528099-Online.2019.Winter.CIT336.04/Course Files/../Web%20Files/course.js"></script>
+        <script src="/content/enforced/528099-Online.2019.Winter.CIT336.04/Course Files/../Web%20Files/course.js"></script>
     </p>
-  </body>
+</body>
+
 </html>
