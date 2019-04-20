@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <title>Web Hosting & Remote Databases | Backend Web Development</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="336course.css" />
+    <link rel="stylesheet" href="prism.css" />
+  </head>
+  <body>
+    <div id="main" class="splash">
+      <div id="header">
+        <img src="images/largeBanner.jpg" alt="Course Banner" />
+      </div>
+      <div id="article">
+      <ol>
+       <h1>Web Hosting</h1>
+       <p>
+         To allow your instructor to easily grade your assignments you will a
+         web host (remote server). What is a web host you may ask. The video
+         below will give a quick overview to answer this question.
+       </p>
+       <iframe
+         width="560"
+         height="315"
+         src="https://www.youtube.com/embed/0hGK7qiQ6WA"
+         frameborder="0"
+         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+         allowfullscreen
+       ></iframe>
+       <p>
+         There are lots of web hosts out there especially for PHP. You will
+         be provided a web host for this course. You will not need direct access
+         to add files or administrate MySQL.
+       </p>
+      <p>
+      Go to https://www.codehouse.dev/[BYU-I username]_acme to view your web site.
+      <br>Example: https://www.codehouse.dev/ols99016_acme
+      </p>
+      <h1>Remote Database</h1>
+        <h2>Shared Hosting</h2>
+        <p>
+          Typically when a hosting account is purchased from a hosting company,
+          that account is in a shared environment. This means that the account
+          resides on a server with other accounts - this the server is "shared".
+          While this is cost effective, it also poses a few challenges. One of
+          those challenges is creating and using databases that belong to your
+          account and not to someone else.
+        </p>
+
+        <h2>Databases in the Control Interface</h2>
+        <p>
+          In a shared hosting environment, it is important to realize that you
+          are restricted from running SQL scripts to create a database and
+          provide rights for users to the database. Instead, you must use the
+          hosting company's database creation tool, which usually includes a
+          means of creating proxy users and granting rights or privileges to
+          those users for a particular database.
+        </p>
+        <p>
+          For this course, your remote database has already been created for you
+          as well as a proxy user to access your database.
+          You don't need to do the setup work that you did for your local database server.
+          Your remote database has been setup in a way that you will not need to do any modifications
+          the entire semester.
+        </p>
+        <h2>Modify connection.php</h2>
+        <p>
+          To have PHP connect to your remote database, we will need to
+          make some changes to the connection file.
+        </p>
+        <h3>Steps</h3>
+        <ol>
+          <li>Open your connection.php file</li>
+          <li>
+            From the code below, copy the IF statement below the function
+            acmeConnect. <br />*Note: Make sure to include the curly brace.
+          </li>
+          <li>
+            Place the code above your local connection variables in
+            connection.php with exception of $server.
+          </li>
+          <li>
+            Then copy the ELSE statement and place it below your local
+            connection variable. <br />*Note: Make sure to include the curly
+            braces.
+          </li>
+          <li>
+            Enter the values indicated by the comments to the right.
+          </li>
+        </ol>
+        <pre
+          class="line-numbers language-php"
+          style="width: 48em; height: 24em; background: transparent;"
+        >
+        <code class="language-php">
+        function acmeConnect() {
+          $server = 'localhost';
+
+          if (stripos($_SERVER["HTTP_HOST"], 'localhost') === 0
+              || stripos($_SERVER["HTTP_HOST"], '127.0.0.1') === 0) {
+            // Running on local server
+            $dbname= 'acme';
+            $username = 'iClient';
+            $password = 'fCXxC7CW7TVU9HxH';
+          } else {
+            // Running on remote server
+            $dbname= ''; // [BYU-I username]_acme
+            $username = ''; // [BYU-I username]_iClient
+            $password = ''; // [BYU-I username]_Pwd
+          }
+
+          $dsn = "mysql:host=$server;dbname=$dbname";
+          $options = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
+
+          // Create the actual connection object and assign it to a variable
+          try {
+            $link = new PDO($dsn, $username, $password, $options);
+            return $link;
+          } catch(PDOException $e) {
+            header('Location: /acme/view/500.php');
+            exit;
+          }
+        }
+        </code>
+        </pre>
+      </div>
+    </div>
+    <script src="prism.js"></script>
+  </body>
+</html>

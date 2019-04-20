@@ -33,28 +33,32 @@
             </p>
             <h1>Continuous Deployment</h1>
             <p>
-                What if every time you committed or merged your web site is updated with the
+                What if every time you committed or merged that your web site was updated with the
                 changes? Look no further than to Continuous Deployment (CD). GitLab provides built-in
                 Continuous Deployment. Continuous deployment is an automated process to deploy your web site changes. Your repository has been setup for is already setup to deploy each time a commit is pushed to "master."
             </p>
             <p>
                 To implement Continuous Deployment, you need a script file. This script
-                file contains an ordered set of commands to tell GitLab how to deploy
-                your changes. You should already have this file (.gitlab-ci.yml) inside your repository.
+                file contains an ordered set of commands to tell GitLab how to deploy your changes.
+                You should already have this file (.gitlab-ci.yml) inside your repository.
             </p>
-            <h2>Create Environment Variables</h2>
+            <h2>Environment Variables</h2>
             <p>
                 Environment variables are a dependency of the script file in your repository. Here is a
                 short video to teach you about environment variables.
             </p>
             <iframe width="560" height="315" src="https://www.youtube.com/embed/QRg_ennTwHY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             <h3>Environment Variables in GitLab</h3>
-            <ul>
-                <li>Within GitLab, click Settings &gt; CI/CD in the left sidebar.</li>
+            <ol>
+                <li>Within GitLab, open your "acme" project.</li>
+                <li>Click Settings &gt; CI/CD in the left sidebar.</li>
                 <li>To the right, expand "Environment variables".</li>
-                <li>You will see a few variables are already created for you by your instructor.</li>
-                <li><strong style="color: red; text-transform: uppercase;">Please refrain from changing any of these variables or else you will break your web site.</strong></li>
-            </ul>
+                <li>You will see a variable already created for you by your instructor.</li>
+            </ol>
+            <strong style="color: red; text-transform: uppercase;">
+                Please refrain from changing anything here or else
+                you will break your web site.
+            </strong>
         </div>
     </div>
 </body>
