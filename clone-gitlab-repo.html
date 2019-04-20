@@ -1,35 +1,56 @@
 <!DOCTYPE html>
 <html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <title>Clone GitLab Repository | Backend Web Development</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="336course.css" />
+  </head>
 
-<head>
-  <meta charset="utf-8" />
-  <title>Clone GitLab Repository | Backend Web Development</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="336course.css" />
-</head>
-
-<body>
-  <div id="main" class="splash">
-    <div id="header"><img src="images/largeBanner.jpg" alt="Course Banner" /></div>
+  <body>
+    <div id="main" class="splash">
+      <div id="header">
+        <img src="images/largeBanner.jpg" alt="Course Banner" />
+      </div>
       <div id="article">
+        <h1>Change Notifications</h1>
+        <ol>
+          <li>
+            Log into your GitLab account. If you are already logged go to the
+            upper-right corner and click on your profile picture.
+          </li>
+          <li>Once the menu appears click "Settings".</li>
+          <li>Locate the sidebar on the left and click "Notifications".</li>
+          <li>
+            In the right panel, click on the "Global" dropdown belonging to your
+            "acme" repository.
+          </li>
+          <li>
+            Select the "Custom" selection and check the options other than
+            "Close merge request", "Merged merge request", and "Failed pipeline"
+          </li>
+        </ol>
         <h1>Clone a GitLab Repository</h1>
-        <h2>Introduction</h2>
+
         <p>
-          This document outlines the steps needed to create a local repository from
-          your GitLab repository. That means you are going to create a copy of your 
-          GitLab repository locally so you can make changes. The term for this process 
-          is cloning. You will use Visual Studio Code to clone your "acme" repository.
+          This document outlines the steps needed to create a local repository
+          from your GitLab repository. That means you are going to create a copy
+          of your GitLab repository locally so you can make changes. The term
+          for this process is cloning. You will use Visual Studio Code to clone
+          your "acme" repository.
         </p>
         <p><strong>Prerequisites</strong>:</p>
         <ul>
-          <li>
-            XAMPP  
-          </li>
+          <li>XAMPP</li>
           <li>
             <a href="gitlab-account.html" target="_self">GitLab Account</a>
           </li>
           <li>
-            <a href="https://blainerobertson.github.io/336br/views/vscode-install.html" target="_self">Visual Studio Code</a>
+            <a
+              href="https://blainerobertson.github.io/336br/views/vscode-install.html"
+              target="_self"
+              >Visual Studio Code</a
+            >
           </li>
         </ul>
         <h2>Copy GitLab repository URL</h2>
@@ -63,14 +84,25 @@
             copied.
           </li>
           <li>
-            Your local folder is the "htdocs" folder within the XAMPP folder (in the Applications folder on Mac, in the C: drive on Windows).
+            Your local folder is the "htdocs" folder within the XAMPP folder (in
+            the Applications folder on Mac, in the C: drive on Windows).
           </li>
           <li>
-            <strong>You will have the "acme" starter assets in addition to README.md in your folder.</strong>
+            <strong
+              >You will have the "acme" starter assets in addition to README.md
+              in your folder.</strong
+            >
           </li>
         </ul>
         <p>
-          <iframe width="500" height="375" src="https://www.youtube.com/embed/pVQCJ6sY8AQ?feature=oembed&amp;wmode=opaque&amp;rel=0&amp;start=70" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+          <iframe
+            width="500"
+            height="375"
+            src="https://www.youtube.com/embed/pVQCJ6sY8AQ?feature=oembed&amp;wmode=opaque&amp;rel=0&amp;start=70"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen=""
+          ></iframe>
         </p>
         <h2>Troubleshooting</h2>
         <p>
@@ -82,17 +114,32 @@
             href="http://www.git-scm.com"
             target="_blank"
             title="Open Git website"
-            >http://www.git-scm.com</a>.
+            >http://www.git-scm.com</a
+          >.
           <strong
             >Note: After the installation finishes, you need to restart Visual
-            Studio Code.</strong>
+            Studio Code.</strong
+          >
         </p>
         <h3>Installation on Mac</h3>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/LK0vMt_lEbQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/LK0vMt_lEbQ"
+          frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
         <h3>Installation on Windows</h3>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/B5t6i-2HWgw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/B5t6i-2HWgw"
+          frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
       </div>
     </div>
-</body>
-
+  </body>
 </html>
