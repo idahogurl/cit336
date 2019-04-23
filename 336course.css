@@ -177,13 +177,6 @@ footer {
   background-color: #f0f0f0;
 }
 
-img,
-video {
-  width: 75%;
-  height: auto;
-  margin-top: 10px;
-}
-
 mark {
   background-color: yellow;
 }
