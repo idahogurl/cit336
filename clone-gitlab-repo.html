@@ -14,22 +14,28 @@
       </div>
       <div id="article">
         <h1>Change Notifications</h1>
-        <ol>
-          <li>
-            Log into your GitLab account. If you are already logged go to the
-            upper-right corner and click on your profile picture.
-          </li>
-          <li>Once the menu appears click "Settings".</li>
-          <li>Locate the sidebar on the left and click "Notifications".</li>
-          <li>
-            In the right panel, click on the "Global" dropdown belonging to your
-            "acme" repository.
-          </li>
-          <li>
-            Select the "Custom" selection and check the options other than
-            "Close merge request", "Merged merge request", and "Failed pipeline"
-          </li>
-        </ol>
+        <h2>Steps</h2>
+        <div style="display: flex">
+          <div style="width: 75%; margin-right: 10px;">
+            <ol>
+              <li>
+                Log into your GitLab account. If you are already logged go to
+                the upper-right corner and click on your profile picture.
+              </li>
+              <li>Once the menu appears click "Settings".</li>
+              <li>Locate the sidebar on the left and click "Notifications".</li>
+              <li>
+                In the right panel, click on the "Global" dropdown belonging to
+                your "acme" repository.
+              </li>
+              <li>
+                Select the "Custom" selection. Modify the selections until only
+                "Close merge request" and "Merged merge request" are checked.
+              </li>
+            </ol>
+          </div>
+          <img src="images/custom-notifications.png" alt="" />
+        </div>
         <h1>Clone a GitLab Repository</h1>
 
         <p>
@@ -41,7 +47,17 @@
         </p>
         <p><strong>Prerequisites</strong>:</p>
         <ul>
-          <li>XAMPP</li>
+          <li>
+            XAMPP (<a
+              href="https://byui.instructure.com/courses/51068/modules/items/5179416"
+              >Windows</a
+            >
+            or
+            <a
+              href="https://byui.instructure.com/courses/51068/modules/items/5179414"
+              >Mac</a
+            >)
+          </li>
           <li>
             <a href="gitlab-account.html" target="_self">GitLab Account</a>
           </li>
@@ -88,10 +104,8 @@
             the Applications folder on Mac, in the C: drive on Windows).
           </li>
           <li>
-            <strong
-              >You will have the "acme" starter assets in addition to README.md
-              in your folder.</strong
-            >
+            You will have the "acme" starter assets but no README.md in your
+            folder.
           </li>
         </ul>
         <p>
