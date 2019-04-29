@@ -64,7 +64,7 @@ CREATE TABLE `clients` (
 
 LOCK TABLES `clients` WRITE;
 /*!40000 ALTER TABLE `clients` DISABLE KEYS */;
-INSERT INTO `clients` VALUES (1,'Sister','Vest','vestre@byui.edu','$2y$10$DG4wo7TFlA6xq61YqDaAieWRjCiakCImM50whBWuVAErQxO53UcQq','1');
+INSERT INTO `clients` VALUES (1,'Sister','Vest','vestre@byui.edu','$2y$10$DG4wo7TFlA6xq61YqDaAieWRjCiakCImM50whBWuVAErQxO53UcQq','3');
 /*!40000 ALTER TABLE `clients` ENABLE KEYS */;
 UNLOCK TABLES;
 
