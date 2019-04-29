@@ -37,7 +37,6 @@
           <img src="images/custom-notifications.png" alt="" />
         </div>
         <h1>Clone a GitLab Repository</h1>
-
         <p>
           This document outlines the steps needed to create a local repository
           from your GitLab repository. That means you are going to create a copy
@@ -100,8 +99,9 @@
             copied.
           </li>
           <li>
-            Your local folder is the "htdocs" folder within the XAMPP folder (in
-            the Applications folder on Mac, in the C: drive on Windows).
+            Your root folder is <strong>/xampp/htdocs</strong> on Windows and
+            <strong>Applications/XAMPP/htdocs</strong> on Mac (press ⌘+Shift+G
+            to type in the folder)
           </li>
           <li>
             You will have the "acme" starter assets but no README.md in your
@@ -109,15 +109,33 @@
           </li>
         </ul>
         <p>
+          <mark>Starts at 2:22 mark</mark>
           <iframe
             width="500"
             height="375"
-            src="https://www.youtube.com/embed/pVQCJ6sY8AQ?feature=oembed&amp;wmode=opaque&amp;rel=0&amp;start=70"
+            src="https://www.youtube.com/embed/pVQCJ6sY8AQ?feature=oembed&amp;wmode=opaque&amp;rel=0&amp;start=142"
             frameborder="0"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen=""
           ></iframe>
         </p>
+        <h2>Notice!</h2>
+        Those familiar with Git having used GitHub may try to push a new file to
+        GitLab to test the connection. Do not attempt this. An error message
+        will result since the master branch is protected. The master branch may
+        only be modified by merged merge requests.
+        <h2>Test</h2>
+        <ol>
+          <li>Ensure XAMPP is running.</li>
+          <li>
+            Open your web browser and enter http://localhost/[BYU-I
+            username]_acme
+          </li>
+          <li>
+            Once loaded you should see a listing of your repository contents.
+            <img src="images/successful-clone.png" alt="" />
+          </li>
+        </ol>
         <h2>Troubleshooting</h2>
         <p>
           When connecting VS Code to GitLab, you may get the error
