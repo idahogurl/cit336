@@ -47,29 +47,83 @@
         <p><strong>Prerequisites</strong>:</p>
         <ul>
           <li>
-            XAMPP (<a
-              href="https://byui.instructure.com/courses/51068/modules/items/5179416"
-              >Windows</a
-            >
+          XAMPP (<a href="https://byui.instructure.com/courses/51068/modules/items/5179416">Windows</a>
             or
-            <a
-              href="https://byui.instructure.com/courses/51068/modules/items/5179414"
-              >Mac</a
-            >)
+          <a href="https://byui.instructure.com/courses/51068/modules/items/5179414">Mac</a>)
           </li>
           <li>
             <a href="gitlab-account.html" target="_self">GitLab Account</a>
           </li>
           <li>
-            <a
-              href="https://blainerobertson.github.io/336br/views/vscode-install.html"
-              target="_self"
-              >Visual Studio Code</a
-            >
+          <a href="https://blainerobertson.github.io/336br/views/vscode-install.html" target="_self">Visual Studio
+            Code</a>
           </li>
         </ul>
+      <h2>Add SSH Key</h2>
+      <h3>Use an existing SSH Key</h3>
+      <h4>Windows</h4>
+      <ol>
+        <li>Open the Windows explorer and navigate to <code class="highlight-code">C:\Users\your_username\.ssh</code>
+        </li>
+        <li>Right-click on <code class="highlight-code">id_rsa.pub</code> and click on "Open". Skip to "Create a New
+          Key" below if file does not exist.</li>
+        <li>Choose Notepad when asked which program to open the file.</li>
+        <li>Copy the entire file contents.</li>
+      </ol>
+
+      <h4>Mac</h4>
+      <ol>
+        <li>Open a terminal window.</li>
+        <li>Type <code class="highlight-code">cat ~/.ssh/id_rsa.pub</code></li>
+        <li>Skip to "Create a New Key" below if nothing is output</li>
+        <li>Copy the entire output.</li>
+        </li>
+      </ol>
+      <h3>
+        Create a New Key
+      </h3>
+      <ol>
+        <li>Open a terminal window. In Windows, press Win+R to open the Run dialog. Type cmd and press Enter.</li>
+        <li>Type <code class="highlight-code">ssh-keygen -o -t rsa -b 4096 -C "email@example.com"</code><br>
+          Replace email@example.com with your email address.</li>
+        <li>Press the "Enter" key until the key is generated.</li>
+        <li>
+          <h4>
+            Windows
+          </h4>
+          <ol>
+            <li>Open the Windows explorer and move to <code class="highlight-code">C:\Users\your_username\.ssh</code>
+            </li>
+            <li>Right-click on <code class="highlight-code">id_rsa.pub</code> and click on "Open".
+            </li>
+            <li>Choose Notepad when asked which program to open the file.</li>
+            <li>Copy the entire file contents.</li>
+          </ol>
+        </li>
+        <li>
+          <h4>Mac</h4>
+          <ol>
+            <li>
+              Type <code class="highlight-code">cat ~/.ssh/id_rsa.pub</code>
+            </li>
+            <li>Skip to "Create a New Key" below if nothing is output.</li>
+            <li>Copy the entire output of the file's contents.</li>
+        </li>
+      </ol>
+      </li>
+      </ol>
+      <h3>Paste into GitLab</h3>
+      <ol>
+        <li>Log into your GitLab account. If you are already logged go to
+          the upper-right corner and click on your profile picture.
+        </li>
+        <li>Once the menu appears click "Settings".</li>
+        <li>Locate the sidebar on the left and click "SSH Keys".</li>
+        <li>Paste your SSH Key into the textbox.</li>
+        <li>Enter a title.</li>
+        <li>Click "Add key" button.</li>
+      </ol>
         <h2>Copy GitLab repository URL</h2>
-        <p></p>
         <ol>
           <li>
             Log into your GitLab account. If you are already logged go to the
@@ -79,8 +133,8 @@
           <li>When the project list loads click on your "acme" project.</li>
           <li>To the right, click the blue "Clone" button</li>
           <li>
-            A small popup will display. Click the copy button next to the 2nd
-            textbox.
+          A small popup will display. Click the copy button next to the 1st
+          textbox (Clone with SSH).
           </li>
           <li>
             You now have the URL you need to connect Visual Studio Code to
@@ -110,14 +164,10 @@
         </ul>
         <p>
           <mark>Starts at 2:22 mark</mark>
-          <iframe
-            width="500"
-            height="375"
+        <iframe width="500" height="375"
             src="https://www.youtube.com/embed/pVQCJ6sY8AQ?feature=oembed&amp;wmode=opaque&amp;rel=0&amp;start=142"
-            frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen=""
-          ></iframe>
+          frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen=""></iframe>
         </p>
         <h2>Notice!</h2>
         Those familiar with Git having used GitHub may try to push a new file to
@@ -129,7 +179,7 @@
           <li>Ensure XAMPP is running.</li>
           <li>
             Open your web browser and enter http://localhost/[BYU-I
-            username]_acme
+          username]-acme
           </li>
           <li>
             Once loaded you should see a listing of your repository contents.
@@ -142,35 +192,16 @@
           <code>command git.clone not found</code>. This means that Git software
           needs to be installed. The installers mentioned in the videos are
           available at
-          <a
-            href="http://www.git-scm.com"
-            target="_blank"
-            title="Open Git website"
-            >http://www.git-scm.com</a
-          >.
-          <strong
-            >Note: After the installation finishes, you need to restart Visual
-            Studio Code.</strong
-          >
+        <a href="http://www.git-scm.com" target="_blank" title="Open Git website">http://www.git-scm.com</a>.
+        <strong>Note: After the installation finishes, you need to restart Visual
+          Studio Code.</strong>
         </p>
         <h3>Installation on Mac</h3>
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/LK0vMt_lEbQ"
-          frameborder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/LK0vMt_lEbQ" frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <h3>Installation on Windows</h3>
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/B5t6i-2HWgw"
-          frameborder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/B5t6i-2HWgw" frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
   </body>

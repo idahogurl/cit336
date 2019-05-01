@@ -191,3 +191,9 @@ mark {
 figure {
   margin: 10px 0;
 }
+
+.highlight-code {
+  background-color: #eeeeee;
+  color: red;
+  padding: 3px;
+}
